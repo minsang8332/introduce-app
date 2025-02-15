@@ -2,8 +2,8 @@
     <slot :posts="posts">
         <section class="not-prose font-mono">
             <div class="column text-gray-400 text-sm">
-                <div class="w-2/12">일자</div>
-                <div class="w-10/12">제목</div>
+                <div class="w-2/12">Writed At</div>
+                <div class="w-10/12">Title</div>
             </div>
             <ul>
                 <li v-for="post in posts" :key="post._path">

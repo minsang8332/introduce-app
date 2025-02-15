@@ -21,7 +21,7 @@
                 <select-color-scheme />
             </ClientOnly>
         </header>
-        <main class="p-2 mt-10">
+        <main class="p-4 pt-8">
             <slot />
         </main>
     </div>
