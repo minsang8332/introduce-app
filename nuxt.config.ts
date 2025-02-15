@@ -12,11 +12,12 @@ export default defineNuxtConfig({
             mode: 'out-in',
         },
     },
-    modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content'],
+    modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@pinia/nuxt'],
     content: {
+        documentDriven: true,
         highlight: {
             theme: 'monokai',
-            preload: ['php', 'javascript', 'dart', 'java'],
+            preload: ['javascript', 'java', 'php', 'dart'],
         },
     },
     colorMode: {

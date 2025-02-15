@@ -26,7 +26,7 @@
         </main>
     </div>
 </template>
-<script setup>
+<script setup lang="ts">
 useHead({
     titleTemplate: '%s - minsang8332',
     link: [

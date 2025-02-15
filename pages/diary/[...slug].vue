@@ -1,24 +1,23 @@
 <template>
-    <article class="max-w-none prose dark:prose-invert">
+    <article class="prose dark:prose-invert max-w-none">
         <ContentDoc>
             <template #not-found>
                 <p>지금 접근하신 경로에 대해 저는 아무 것도 모릅니다!</p>
             </template>
             <template v-slot="{ doc }">
-                <div class="grid grid-cols-6 gap-16">
+                <div class="grid grid-cols-12 gap-6">
                     <div
                         :class="{
-                            'col-span-6 md:col-span-4': doc.toc,
-                            'col-span-6': !doc.toc,
+                            'col-span-full': true,
+                            'md:col-span-9': doc.body.toc && doc.body.toc.links.length > 0,
                         }"
                     >
                         <ContentRenderer :value="doc" />
                     </div>
-                    <div class="hidden md:col-span-2 md:block not-prose" v-if="doc.toc">
+                    <div v-if="doc.body.toc" class="hidden md:col-span-3 md:block not-prose">
                         <aside class="sticky top-8">
-                            <div class="font-semibold mb-2">Table of Contents</div>
                             <nav>
-                                <TocLinks :links="doc.body.toc.links" :activeId="activeId" />
+                                <TocLink :links="doc.body.toc.links" :activeId="activeId" />
                             </nav>
                         </aside>
                     </div>

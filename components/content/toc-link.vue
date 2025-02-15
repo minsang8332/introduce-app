@@ -10,7 +10,7 @@
             >
                 {{ link.text }}
             </NuxtLink>
-            <TocLinks :links="link.children" :level="level + 1" :activeId="activeId" />
+            <TocLink :links="link.children" :level="level + 1" :activeId="activeId" />
         </li>
     </ul>
 </template>
