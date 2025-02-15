@@ -1,0 +1,294 @@
+---
+document: Flutter 뿌수기
+title: Flutter 뿌수기
+publishedAt: 2024-11-16
+---
+
+# Flutter 뿌수기
+
+공부한 내용 기록으로 남기려 한다. <br>
+Dart 클래스 중첩이 깊어질수록 CSS가 얼마나 깔금하고 스마트한지 알게 된게 소감이다. <br>
+
+## 설치하기
+
+1. 아래 명령줄을 사용하여 환경설정 상황을 확인할 수 있다.
+
+```sh
+flutter doctor
+```
+
+### Window
+
+### Andorid
+
+## 실행하기
+
+### VSCode
+
+1. **Extension** 에서 Dart Code 의 **Flutter** 확장 플러그인을 설치하도록 하자.
+
+2. vscode 의 palette (ctrl/cmd + shift + p) 에서 **Select Device** 를 선택하여 장치를 세팅해 주자.
+
+3. lib/main.dart 파일에서 **Run Without Debugging** 을 통해 실행하면 된다.
+
+## 내장 클래스
+
+### State
+
+-   initState() : State 객체가 생성된 다음 실행. <br>
+    위젯의 상태를 초기화하거나 데이터 요청, 애니메이션 등 초기 설정을 수행할 수 있다.
+
+-   build() : 위젯이 만들어지고 setState() 가 호출 된 다음에 실행
+-   dispose() : 위젯이 제거될 때 실행
+
+### StatelessWidget
+
+> 위젯을 만들 때 사용하는 기본 클래스중 하나. 이 위젯은 상태를 가지지 않으며, 생성 시에 주어진 데이터에 기반하여 화면을 그리는 역할.  
+> 즉, 상태가 변경되지 않는 불변(immutable) 위젯을 정의할 때 사용
+
+-   불변성 (Immutability): StatelessWidget은 상태를 가지지 않으므로, 위젯의 속성은 한 번 설정된 후 변경되지 않습니다. 즉, 위젯의 외관이나 동작이 변경되지 않습니다.
+
+-   퍼포먼스 (Performance): 상태가 없으므로, StatelessWidget은 상태가 있는 위젯보다 성능이 좋을 수 있습니다. 위젯의 상태가 변경되지 않기 때문에, 위젯이 재구성(rebuild)될 때 더 간단하고 빠릅니다.
+
+-   사용 시점: StatelessWidget은 주로 화면에 표시할 내용이 고정되어 있고, 사용자 상호작용에 의해 변경되지 않는 경우에 사용합니다.
+
+```dart
+import 'package:flutter/material.dart';
+
+class MyWidget extends StatelessWidget {
+    // key를 부모 클래스에 전달하고 이 위젯이 불변임을 명시하는 구문
+    const MyWidget({ super.key });
+    @override
+    Widget build(BuildContext context) {
+        return const Text('이건 불변의 위젯이야 !');
+    }
+}
+```
+
+### StatefulWidget
+
+> 동적인 상태를 가지는 위젯을 만들 때 사용
+
+1. 핵심은 **setState** 이다.
+
+```dart
+import 'dart:math';
+import 'package:flutter/material.dart';
+int number = 1;
+class MyWidget extends StatefulWidget {
+    final String title;
+    final String desc;
+    // 생성자, 여기서 {} 는 Dart 에서 쓰이는 Map 과 상관이 없음.
+    const MyNumber({
+        super.key,
+        required this.title
+        required this.desc
+    });
+    /*
+        위 구문은 아래 구문과 동일하다. ':' 뒤에 오는 부분은 초기화 리스트를 정의함
+        Dart 에서의 생성자는 잘 이해가 안가네 .. ㅎㅎ
+
+        const MyNumber({
+            Key? key,
+            requied string title,
+            requied string desc,
+        }) : title = title,
+            desc = desc,
+            super(key: key);
+     */
+    @override
+    State<MyWidget> createState() {
+        return _MyWidgetState();
+    }
+}
+class _MyWidgetState extends State<MyWidget> {
+    void setNumber() {
+        setState(() {
+            number = Random().nextInt(1000) + 1;
+        });
+    }
+    @override
+    Widget build(context) {
+        // 💡 widget: State 객체가 속한 StatefulWidget 의 인스턴스를 참조할 수 있는 특수한 변수
+        var title = widget.title;
+        print('이 위젯의 이름은 $title 이야');
+        // setNumber();
+
+        return const TextButton(
+            onPressed: setNumber,
+            child: const Text('이건 변할 수 있는 위젯이야 ! $number')
+        )
+    }
+}
+```
+
+💡 widget 변수는 State 객체가 속한 StatefulWidget 의 인스턴스를 참조할 수 있는 특수한 변수  
+💡 bulid 함수 안에선 setState 관련 함수를 사용하면 안돼 ! 무한루프나 비효율적인 렌더링이 발생
+
+### BoxDecoration
+
+> Container 위젯이나 다른 위젯의 배경을 꾸미기 위해 사용하는 클래스, 다양한 시각적 효과를 적용 할 수 있다.
+
+1. gradient
+
+```dart
+BoxDecoration(
+    gradient: LinearGradient(
+        colors: [
+            Color.fromARGB(255, 26, 2, 80),
+            Color.fromARGB(255, 45, 7, 98),
+        ],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight
+    )
+),
+```
+
+2. image
+
+```dart
+BoxDecoration(
+    image: DecorationImage(
+        image: AssetImage('assets/logo.jpg'),
+        fit: BoxFit.cover,
+    ),
+)
+```
+
+### Text
+
+```dart
+Text(
+    'Hello World!',
+        style: TextStyle(
+        color: Colors.red,
+        fontSize: 18,
+    )
+),
+```
+
+### MainAxisAlignment
+
+> 위젯의 주 축 (main axis) 에서 자식들의 정렬 방식.
+> **Row** 에서는 수평방향이고, **Column** 에서는 수직방향이다.
+
+-   MainAxisAlignment.start
+-   MainAxisAlignment.end
+-   MainAxisAlignment.center
+-   MainAxisAlignment.spaceBetween
+-   MainAxisAlignment.spaceAround
+-   MainAxisAlignment.spaceEvenly
+
+💡CSS 로 비유하면 **display: flex** 같은 느낌이네 ...
+
+### MainAxisSize
+
+> 위젯의 주 축 방향 (main axis) 으로 얼마나 확장할지를 제어
+
+-   MainAxisSize.min
+-   MainAxisSize.max
+
+💡CSS 로 비유하면 **flex: 0** 은 min 에 해당하고 **flex: 1** 은 max 와 같네
+
+## 커스텀 위젯 만들기
+
+```dart
+import 'package:flutter/material.dart';
+void main() {
+    runApp(
+        MaterialApp(
+            home: GradientScaffold()
+        )
+    );
+}
+class GradientScaffold extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+        return Scaffold(
+            body: GradientContainer()
+        );
+    }
+}
+class GradientContainer extends StatelessWidget {
+    // const GradientContainer({ super.key }) 한줄로 처리할수도 있음!
+    GradientContainer({ Key? key }): super(key: key) {
+        print('Init::GradientContainer');
+    }
+    @override
+    Widget build(BuildContext context) {
+        return Container(
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    colors: [
+                        Color.fromARGB(255, 26, 2, 80),
+                        Color.fromARGB(255, 45, 7, 98),
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight
+                )
+            ),
+            child: const Center(
+                child: Text(
+                    'Hello World!',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                        )
+                ),
+            )
+        );
+    }
+}
+```
+
+## 다른 소스코드 호출하기
+
+1. 상대경로 방식
+
+```dart
+import './gradient-container.dart';
+```
+
+2. 절대경로 방식
+
+```dart
+import 'package:프로젝트명/gradient-container.dart';
+```
+
+## 짜증나는 const
+
+> Flutter에서는 const를 활용하여 위젯의 성능을 최적화 할 수 있다.  
+> const를 사용하면 Flutter가 동일한 위젯 인스턴스를 재사용함
+
+그 외 일반적인 의미는 다음과 같다.
+
+-   상수 값: 컴파일 타임에 결정되며, 런타임 동안 변경되지 않음
+-   불면 객체: 객체의 속성이나 값이 변경되지 않으며, 동일한 값의 객체는 메모리에서 동일한 인스턴스를 재사용됨
+
+**const**는 컴파일 타임 상수를 정의하며, 객체를 불변으로 만듦.
+
+## assets 설정
+
+1. **pubspec.yaml** 경로 기입
+2. **flutter pub get** 명령어 실행
+
+```yaml
+flutter:
+    # To add assets to your application, add an assets section, like this:
+    assets:
+        - assets/
+```
+
+## 실행오류
+
+> 오류 항목 어떻게 해결하였는지 기록하기
+
+### map 함수 배열주는데 에러 발생
+
+```
+📌오류문구
+The argument type 'Iterable<Row>' can't be assigned to the parameter type 'List<Widget>
+
+📌해결하기
+map(...).toList() 를 사용하면됨.**
+```
