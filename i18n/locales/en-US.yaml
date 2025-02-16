@@ -1,0 +1,42 @@
+layout:
+    default:
+        nav:
+            note: WRITING
+index-page:
+    about-me:
+        title: Hello World, I'm Minsang8332
+        description: I mainly work with JavaScript and have experience developing various programs for PC, mobile, tablet, and kiosk platforms.
+    development:
+        title: Developments
+        main:
+            title: 🥇 I mainly have javascript (typescript) skills.
+            items:
+                1: vue2-3, nuxt2-3, vuetify2-3, quasar1-2, d3.js, chart.js, tailwindcss, scss ...
+                2: node14-20, electron.js, express, puppeteer, WebSocket, MQTT, NFC, RS232, Bluetooth ...
+        sub:
+            title: 🥈 I have experience in program development with other skills.
+            items:
+                1: php, codeigniter, symfony, laravel, doctine orm, eloquent orm
+                2: java, spring framework, spring boot, mybatis, hibernate, jsp, thymeleaf
+                3: mysql, mssql, mongodb, sqlite, redis
+        others:
+            title: 🥉 Additionally, I have experience building server infrastructure.
+            items:
+                1: I have experience hosting via Docker containers on AWS, GCP and OCI.
+                2: I have worked with web servers like NGINX and Apache HTTP Server.
+                3: I'm using GitHub or GitLab for version control.
+                4: I use Jira, Mantis, Redmine for project schedule management.
+                5: I collaborate using Slack, Microsoft Teams.
+    experience:
+        title: Work Experience
+        description: I have experience working as a developer at the following companies.
+        items:
+            freude: Freude Pvt. Ltd.
+            connect-wave: Connect Wave Inc.
+            selvas-ai: Selvas AI Inc.
+            penta-security: Penta Security Pvt. Ltd.
+note-page:
+    subtitle: Bad handwriting is better than a good memory.
+    columns:
+        published-at: Published At
+        content: Content

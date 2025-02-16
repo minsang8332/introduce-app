@@ -1,7 +1,7 @@
 <template>
     <div class="not-prose">
-        <section v-if="pending">로딩중...</section>
-        <section v-else-if="error">데이터를 불러 올 수 없습니다.</section>
+        <section v-if="pending">{{ $t('project-page.loading') }}</section>
+        <section v-else-if="error">{{ $t('project-page.errors') }}</section>
         <section v-else>
             <ul class="grid grid-cols-1 gap-4">
                 <li

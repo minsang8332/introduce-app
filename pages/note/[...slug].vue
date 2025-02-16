@@ -1,8 +1,9 @@
 <template>
     <article class="prose dark:prose-invert max-w-none">
+        <p>📖{{ $t('note-page.subtitle') }}</p>
         <ContentDoc>
             <template #not-found>
-                <p>지금 접근하신 경로에 대해 저는 아무 것도 모릅니다!</p>
+                <p>{{ $t('note-page.errors.not-found') }}</p>
             </template>
             <template v-slot="{ doc }">
                 <div class="grid grid-cols-12 gap-6">

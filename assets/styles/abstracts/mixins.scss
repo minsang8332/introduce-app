@@ -1,0 +1,14 @@
+@mixin float-animation {
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+        animation: float-animation 0.6s infinite ease-in-out alternate;
+    }
+    @keyframes float-animation {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-0.25rem);
+        }
+    }
+}

@@ -3,13 +3,19 @@
         <NuxtPage />
     </NuxtLayout>
 </template>
-<style>
-.page-enter-active,
-.page-leave-active {
-    transition: all 0.3s;
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
 }
-.page-enter-from,
-.page-leave-to {
-    opacity: 0.5;
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave {
+    opacity: 1;
 }
 </style>

@@ -6,13 +6,15 @@ export default defineNuxtConfig({
             enabled: true,
         },
     },
+    modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@pinia/nuxt', '@nuxtjs/i18n'],
+    compatibilityDate: '2025-02-14',
     app: {
         pageTransition: {
-            name: 'page',
+            name: 'fade',
             mode: 'out-in',
+            duration: 300,
         },
     },
-    modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@pinia/nuxt'],
     content: {
         documentDriven: true,
         highlight: {
@@ -23,10 +25,16 @@ export default defineNuxtConfig({
     colorMode: {
         classSuffix: '',
     },
-    nitro: {
-        prerender: {
-            routes: ['/sitemap.xml'],
-        },
+    css: ['flag-icons/css/flag-icons.min.css', '@/assets/styles/main.scss'],
+    i18n: {
+        strategy: 'no_prefix',
+        defaultLocale: 'en',
+        locales: [
+            { code: 'en', file: 'en-US.yaml' },
+            { code: 'jp', file: 'ja-JP.yaml' },
+            { code: 'kr', file: 'ko-KR.yaml' },
+        ],
+        detectBrowserLanguage: false,
+        lazy: true,
     },
-    compatibilityDate: '2025-02-14',
 })

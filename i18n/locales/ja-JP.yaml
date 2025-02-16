@@ -1,0 +1,42 @@
+layout:
+    default:
+        nav:
+            note: 投稿
+index-page:
+    about-me:
+        title: ハローワールド、Minsang8332と申します
+        description: 主にJavaScriptを扱っており、PC、モバイル、タブレット、キオスクなど、さまざまなプログラムの開発経験があります。
+    development:
+        title: 開発スキル
+        main:
+            title: 🥇 主にJavaScript（TypeScript)を扱っています。
+            items:
+                1: vue2-3, nuxt2-3, vuetify2-3, quasar1-2, d3.js, chart.js, tailwindcss, scss ...
+                2: node14-20, electron.js, express, puppeteer, WebSocket, MQTT, NFC, RS232, Bluetooth ...
+        sub:
+            title: 🥈 その他の技術でプログラム開発の経験があります。
+            items:
+                1: php, codeigniter, symfony, laravel, doctine orm, eloquent orm
+                2: java, spring framework, spring boot, mybatis, hibernate, jsp, thymeleaf
+                3: mysql, mssql, mongodb, sqlite, redis
+        others:
+            title: 🥉 また、サーバーインフラの構築経験もあります。
+            items:
+                1: AWS、GCP、OCIでDockerコンテナを使用したホスティング経験があります。
+                2: NGINXやApache HTTP Serverなどのウェブサーバーを使用した経験があります。
+                3: バージョン管理にはGitHubやGitLabを使用しています。
+                4: プロジェクトスケジュール管理にはJira、Mantis、Redmineを使用しています。
+                5: コラボレーションにはSlack、Microsoft Teamsを使用しています。
+    experience:
+        title: 職務経験
+        description: 以下の企業で開発者として勤務した経験があります。
+        items:
+            freude: フロイデ株式会社
+            connect-wave: コネクトウェーブ
+            selvas-ai: セルバスAI
+            penta-security: ペンタセキュリティ
+note-page:
+    subtitle: 下手な書き方は、良い記憶力よりも優れている。
+    columns:
+        published-at: 公開日
+        content: 内容

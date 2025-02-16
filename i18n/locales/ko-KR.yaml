@@ -1,0 +1,42 @@
+layout:
+    default:
+        nav:
+            note: 글쓰기
+index-page:
+    about-me:
+        title: Hello World, 저는 Minsang8332 입니다.
+        description: 주로 javascript를 다루고 있으며, PC 모바일, 태블릿, 키오스크 등 다양한 프로그램 개발 경험이 있습니다.
+    development:
+        title: 직무 스킬
+        main:
+            title: 🥇 주로 JavaScript (Typescript)를 다룹니다.
+            items:
+                1: vue2-3, nuxt2-3, vuetify2-3, quasar1-2, d3.js, chart.js, tailwindcss, scss ...
+                2: node14-20, electron.js, express, puppeteer, WebSocket, MQTT, NFC, RS232, Bluetooth ...
+        sub:
+            title: 🥈 그 외 스킬로 프로그램 개발 경험이 있습니다.
+            items:
+                1: php, codeigniter, symfony, laravel, doctrine orm, eloquent orm
+                2: java, spring framework, spring boot, mybatis, hibernate, jsp, thymeleaf
+                3: mysql, mssql, mongodb, sqlite, redis
+        others:
+            title: 🥉 서버 인프라 구축 경험이 있습니다.
+            items:
+                1: AWS, GCP, OCI 환경에서 Docker 컨테이너를 이용하여 호스팅 서비스를 제공한 적 있습니다.
+                2: NGINX 및 Apache HTTP Server, Tomcat 등 웹 및 앱 서버를 관리 할 수 있습니다.
+                3: 형상관리는 GitHub와 GitLab을 사용하고 있습니다.
+                4: 프로젝트 일정 관리는 Jira, Mantis, Redmine을 사용하고 있습니다.
+                5: 협업 시 Slack과 Microsoft Teams를 사용하고 있습니다.
+    experience:
+        title: 직무 경력
+        description: 제 직무 경력은 다음과 같습니다.
+        items:
+            freude: 후로이데 주식회사
+            connect-wave: ㈜커넥트웨이브
+            selvas-ai: ㈜셀바스에이아이
+            penta-security: ㈜펜타시큐리티
+note-page:
+    subtitle: 서투른 글쓰기가 좋은 기억보다 낫다.
+    columns:
+        published-at: 공개일
+        content: 내용
