@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    compatibilityDate: '2025-02-14',
     devtools: {
         enabled: true,
         timeline: {
@@ -7,7 +8,6 @@ export default defineNuxtConfig({
         },
     },
     modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@pinia/nuxt', '@nuxtjs/i18n'],
-    compatibilityDate: '2025-02-14',
     app: {
         pageTransition: {
             name: 'fade',
@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     colorMode: {
         classSuffix: '',
     },
-    css: ['flag-icons/css/flag-icons.min.css', '@/assets/styles/main.scss'],
+    css: ['flag-icons/css/flag-icons.min.css', 'floating-vue/dist/style.css', '@/assets/styles/main.scss'],
     i18n: {
         strategy: 'no_prefix',
         defaultLocale: 'en',

@@ -1,6 +1,6 @@
 <template>
-    <article class="prose dark:prose-invert max-w-none">
-        <p>📖{{ $t('note-page.subtitle') }}</p>
+    <article class="prose dark:prose-invert max-w-none relative">
+        <p v-if="showSubtitle">{{ $t('note-page.subtitle') }}</p>
         <ContentDoc>
             <template #not-found>
                 <p>{{ $t('note-page.errors.not-found') }}</p>
@@ -25,11 +25,23 @@
                 </div>
             </template>
         </ContentDoc>
+        <waving-cat />
     </article>
 </template>
 
 <script setup>
+const route = useRoute()
+// defines
+definePageMeta({
+    maxWidth: '80vw',
+})
+// refs
 const activeId = ref(null)
+// computed
+const showSubtitle = computed(() => {
+    return route.path == '/note'
+})
+// life-cycle
 onMounted(() => {
     const callback = (entries) => {
         for (const entry of entries) {

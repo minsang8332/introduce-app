@@ -1,26 +1,26 @@
 <template>
     <article class="index-page prose dark:prose-invert max-w-none">
         <section class="index-page__about-me">
-            <h1>{{ $t('index-page.about-me.title') }}</h1>
-            <p>
+            <h1 v-intersect>{{ $t('index-page.about-me.title') }}</h1>
+            <p v-intersect>
                 {{ $t('index-page.about-me.description') }}
             </p>
         </section>
         <section class="index-page__development">
-            <h2>
+            <h2 v-intersect>
                 <a href="#development"> {{ $t('index-page.development.title') }}</a>
             </h2>
-            <h4>{{ $t('index-page.development.main.title') }}</h4>
+            <h4 v-intersect>{{ $t('index-page.development.main.title') }}</h4>
             <ul>
-                <li>
+                <li v-intersect>
                     <p>{{ $t('index-page.development.main.items.1') }}</p>
                 </li>
-                <li>
+                <li v-intersect>
                     <p>{{ $t('index-page.development.main.items.2') }}</p>
                 </li>
             </ul>
             <h4>{{ $t('index-page.development.sub.title') }}</h4>
-            <ul>
+            <ul v-intersect>
                 <li>
                     <p>{{ $t('index-page.development.sub.items.1') }}</p>
                 </li>
@@ -31,31 +31,31 @@
                     <p>{{ $t('index-page.development.sub.items.3') }}</p>
                 </li>
             </ul>
-            <h4>{{ $t('index-page.development.others.title') }}</h4>
+            <h4 v-intersect>{{ $t('index-page.development.others.title') }}</h4>
             <ul>
-                <li>
+                <li v-intersect>
                     <p>{{ $t('index-page.development.others.items.1') }}</p>
                 </li>
-                <li>
+                <li v-intersect>
                     <p>{{ $t('index-page.development.others.items.2') }}</p>
                 </li>
-                <li>
+                <li v-intersect>
                     <p>{{ $t('index-page.development.others.items.3') }}</p>
                 </li>
-                <li>
+                <li v-intersect>
                     <p>{{ $t('index-page.development.others.items.4') }}</p>
                 </li>
-                <li>
+                <li v-intersect>
                     <p>{{ $t('index-page.development.others.items.5') }}</p>
                 </li>
             </ul>
         </section>
         <section class="index-page__experience">
-            <h2>
+            <h2 v-intersect>
                 <a href="#experience">{{ $t('index-page.experience.title') }}</a>
             </h2>
-            <p>{{ $t('index-page.experience.description') }}</p>
-            <ul>
+            <p v-intersect>{{ $t('index-page.experience.description') }}</p>
+            <ul v-intersect>
                 <li class="grid grid-cols-8">
                     <span class="col-auto">2019 ~ 2020</span>
                     <a class="flex gap-1 col-span-7" href="https://froide.co.jp/" target="_blank"

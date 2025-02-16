@@ -15,6 +15,7 @@
         "@nuxtjs/i18n": "^9.2.0",
         "@nuxtjs/tailwindcss": "^6.8.0",
         "@tailwindcss/typography": "^0.5.9",
+        "@types/lodash": "^4.17.15",
         "@types/node": "^18.17.1",
         "nuxt": "^3.6.5",
         "sass": "^1.85.0",
@@ -24,6 +25,7 @@
         "@pinia/nuxt": "^0.10.1",
         "dayjs": "^1.11.13",
         "flag-icons": "^7.3.2",
+        "floating-vue": "^5.2.2",
         "js-yaml": "^4.1.0",
         "lodash": "^4.17.21"
     }
