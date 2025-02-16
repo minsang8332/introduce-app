@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto" :style="{ maxWidth }">
+    <div class="container mx-auto" :class="getClassList">
         <header
             class="flex justify-between items-center border-b border-gray-200 dark:border-gray-700 md:items-center h-[4rem] px-4"
         >
@@ -32,5 +32,7 @@
 <script setup lang="ts">
 import _ from 'lodash'
 const route = useRoute()
-const maxWidth = computed(() => (_.isString(route.meta.maxWidth) ? _.toString(route.meta.maxWidth) : '50vw'))
+const getClassList = computed(() =>
+    _.isString(route.meta.layoutClassList) ? _.toString(route.meta.layoutClassList) : 'max-w-full md:max-w-4xl'
+)
 </script>

@@ -56,30 +56,31 @@
             </h2>
             <p v-intersect>{{ $t('index-page.experience.description') }}</p>
             <ul v-intersect>
-                <li class="grid grid-cols-8">
-                    <span class="col-auto">2019 ~ 2020</span>
-                    <a class="flex gap-1 col-span-7" href="https://froide.co.jp/" target="_blank"
-                        ><i class="fi fi-jp" /> {{ $t('index-page.experience.items.freude') }}</a
-                    >
+                <li class="flex items-center gap-2">
+                    <span> 2019 ~ 2020 </span>
+                    <i class="fi fi-jp h-[1rem]" />
+                    <a href="https://froide.co.jp/" target="_blank"> {{ $t('index-page.experience.items.freude') }}</a>
                 </li>
-                <li class="grid grid-cols-8">
-                    <span class="col-auto">2020 ~ 2022</span>
-                    <a class="flex gap-1 col-span-7" href="https://connectwave.co.kr/" target="_blank">
-                        <i class="fi fi-kr"></i> {{ $t('index-page.experience.items.connect-wave') }}</a
-                    >
+                <li class="flex items-center gap-2">
+                    <span> 2020 ~ 2022 </span>
+                    <i class="fi fi-kr h-[1rem]" />
+                    <a href="https://connectwave.co.kr/" target="_blank">
+                        {{ $t('index-page.experience.items.connect-wave') }}
+                    </a>
                 </li>
-
-                <li class="grid grid-cols-8">
-                    <span class="col-auto">2022 ~ 2023</span>
-                    <a class="flex gap-1 col-span-7" href="https://www.selvasai.com/" target="_blank"
-                        ><i class="fi fi-kr"></i> {{ $t('index-page.experience.items.selvas-ai') }}</a
-                    >
+                <li class="flex items-center gap-2">
+                    <span> 2022 ~ 2023 </span>
+                    <i class="fi fi-kr h-[1rem]" />
+                    <a href="https://www.selvasai.com/" target="_blank">
+                        {{ $t('index-page.experience.items.selvas-ai') }}
+                    </a>
                 </li>
-                <li class="grid grid-cols-8">
-                    <span class="col-auto">2024 ~</span>
-                    <a class="flex gap-1 col-span-7" href="https://www.pentasecurity.co.kr/" target="_blank"
-                        ><i class="fi fi-kr"></i> {{ $t('index-page.experience.items.penta-security') }}</a
-                    >
+                <li class="flex items-center gap-2">
+                    <span> 2024 ~ </span>
+                    <i class="fi fi-kr h-[1rem]" />
+                    <a href="https://www.pentasecurity.co.kr/" target="_blank">
+                        {{ $t('index-page.experience.items.penta-security') }}
+                    </a>
                 </li>
             </ul>
         </section>

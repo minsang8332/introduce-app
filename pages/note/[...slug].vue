@@ -33,7 +33,7 @@
 const route = useRoute()
 // defines
 definePageMeta({
-    maxWidth: '80vw',
+    layoutClassList: 'md:max-w-6xl',
 })
 // refs
 const activeId = ref(null)
