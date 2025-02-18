@@ -34,6 +34,7 @@ const route = useRoute()
 // defines
 definePageMeta({
     layoutClassList: 'md:max-w-6xl',
+    hideI18nMenu: true,
 })
 // refs
 const activeId = ref(null)

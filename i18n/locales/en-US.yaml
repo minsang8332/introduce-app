@@ -40,3 +40,6 @@ note-page:
     columns:
         published-at: Published At
         content: Content
+components:
+    waving-cat:
+        tooltip: Yay!

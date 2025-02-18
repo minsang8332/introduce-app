@@ -1,16 +1,21 @@
 <template>
-    <img
+    <div
         ref="wavingCatRef"
-        src="@/assets/images/waving-cat.gif"
-        class="absolute z-[999999] w-[4rem] cursor-pointer transition-[top,left] duration-300 ease-out"
+        :style="{
+            backgroundImage: `url('${imgWavingCat}')`,
+        }"
+        class="absolute z-[999999] h-[4rem] w-[4rem] bg-cover bg-center cursor-pointer select-none transition-[top,left] duration-300 ease-out"
         v-tooltip="sayRef"
-        @mouseenter="onLoadWavingCat"
+        @mouseenter.self="onMove"
+        @click.self="onMove"
     />
 </template>
 <script setup lang="ts">
+import imgWavingCat from '@/assets/images/waving-cat.gif'
+const { t } = useI18n()
 const wavingCatRef = ref<HTMLElement | null>(null)
-const sayRef = ref<string>('안녕?')
-const onLoadWavingCat = (event?: MouseEvent) => {
+const sayRef = ref<string>(t('components.waving-cat.tooltip'))
+const onMove = (event?: MouseEvent) => {
     if (wavingCatRef.value) {
         const catWidth = wavingCatRef.value.offsetWidth
         const catHeight = wavingCatRef.value.offsetHeight
@@ -21,6 +26,6 @@ const onLoadWavingCat = (event?: MouseEvent) => {
     }
 }
 onMounted(() => {
-    onLoadWavingCat()
+    onMove()
 })
 </script>

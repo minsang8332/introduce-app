@@ -40,3 +40,6 @@ note-page:
     columns:
         published-at: 공개일
         content: 내용
+components:
+    waving-cat:
+        tooltip: 안녕 ?

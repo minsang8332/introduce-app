@@ -40,3 +40,6 @@ note-page:
     columns:
         published-at: 公開日
         content: 内容
+components:
+    waving-cat:
+        tooltip: (´・ω・｀)

@@ -19,7 +19,7 @@
             </div>
             <ClientOnly>
                 <div class="flex items-center gap-2">
-                    <i18n-menu />
+                    <i18n-menu v-if="!route.meta.hideI18nMenu" />
                     <color-scheme-menu />
                 </div>
             </ClientOnly>
